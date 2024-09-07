@@ -1,0 +1,258 @@
+/* base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+li,
+a,
+p,
+label {
+  list-style-type: none;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.1rem;
+  line-height: 1.56;
+}
+
+label,
+a,
+button {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* theme */
+
+:root {
+  --primary-col: #f4f4f4;
+  --secondary-col: #007bff;
+  --btn-hover-bg: #0056b3;
+  --btn-text-col: #fff;
+  -trans: all 0.3s linear;
+}
+
+/* layout */
+body {
+  background-color: var(--primary-col);
+  color: #333;
+}
+
+.container {
+  max-width: 142rem;
+  width: 50%;
+  margin: 0 auto;
+  padding: 8.4rem 6.4rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* module/reusable */
+button {
+  background-color: var(--secondary-col);
+  color: var(--btn-text-col);
+  border: none;
+  padding: 1.4rem 2.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 600;
+  word-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.56;
+  transition: var(--trans);
+
+  &:hover {
+    background-color: var(--btn-hover-bg);
+  }
+
+}
+
+/***** App Component *****/
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 4rem 0;
+}
+
+/***** End App Component *****/
+
+/***** Welcome Component *****/
+
+.section-welcome {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.main-heading {
+  font-size: 3.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.1rem;
+  line-height: 1.56;
+  text-align: center;
+  color: var(--secondary-col);
+}
+
+/***** End Welcome Component *****/
+
+/***** Survey Component *****/
+
+.survey-heading {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.num-of-question {
+  text-align: right;
+  margin: 2rem 0;
+  font-size: inherit;
+}
+
+.loading-div {
+  font-size: 4rem;
+  text-align: center;
+}
+
+/***** End Survey Component *****/
+
+/***** Question Component *****/
+
+.section-question p {
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.2rem solid #ddd;
+  outline: none;
+  margin: 2rem 0 3rem 0;
+  resize: none;
+}
+
+/***** End Question Component *****/
+
+
+/***** Rating Component *****/
+
+.section-rating {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem 0 4rem 0;
+}
+
+.rating-circle {
+  width: 4rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: var(--trans);
+}
+
+.rating-circle.selected {
+  background-color: var(--secondary-col);
+  color: #fff;
+}
+
+.rating-circle:hover {
+  background-color: var(--secondary-col);
+}
+
+/***** End Rating Component *****/
+
+/***** SurveyButtons Component *****/
+
+.section-surveyButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.survey-button {
+  padding: 1rem 2rem;
+}
+
+.survey-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/***** End SurveyButtons Component *****/
+
+/***** ThankYou Component *****/
+
+.section-thankYou {
+  text-align: center;
+}
+
+.emojis {
+  font-size: 4rem;
+}
+
+.thank-you-heading {
+  font-size: 4rem;
+  color: var(--secondary-col);
+  letter-spacing: 0.1rem;
+  word-spacing: 0.1rem;
+  line-height: 1.56;
+  margin: 2rem 0 1rem 0;
+}
+
+/***** End ThankYou Component *****/
+
+
+/***** Media Queries *****/
+
+@media screen and (width < 1200px) {
+
+  html {
+    font-size: 58%;
+  }
+
+  .container {
+    width: 85%;
+  }
+
+}
+
+@media screen and (width <=575px) {
+
+  html {
+    font-size: 48%;
+  }
+
+  .container {
+    width: 90%;
+    padding: 6.4rem 1.4rem;
+  }
+
+  .rating-circle {
+    width: 3.1rem;
+    aspect-ratio: 1;
+  }
+
+}
+
+/***** End Media Queries *****/
